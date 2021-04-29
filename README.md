@@ -1,4 +1,4 @@
-Ejemplo de Maven + Jersey + JDO
+Ejemplo de Maven + Jersey + JDO + CI
 ===============================
 
 Configuración
