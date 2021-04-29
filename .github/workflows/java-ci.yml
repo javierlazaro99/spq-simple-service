@@ -15,7 +15,7 @@ jobs:
           java-version: 1.8
        
       - name: Lanzar server
-        run: mvn --batch-mode --update-snapshots exec:java
+        run: mvn --batch-mode --update-snapshots compile exec:java
           
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify -Pintegracion
