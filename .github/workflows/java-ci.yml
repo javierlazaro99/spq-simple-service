@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-       
+      
       - name: Prepare database for integration tests
         run: | 
           sudo /etc/init.d/mysql start
@@ -24,4 +24,9 @@ jobs:
           mvn --batch-mode --update-snapshots exec:java -Pdatos
           
       - name: Build with Maven including integration tests
-        run: mvn --batch-mode --update-snapshots verify -Pintegracion    
+        run: mvn --batch-mode --update-snapshots verify -Pintegracion  
+        
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+            
